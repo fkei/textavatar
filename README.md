@@ -14,10 +14,32 @@ Text Avatar(one or twe word) Generation Web Server. (NodeJS)
 - [x] 20 patterns of predictable background color
 - [x] 100% Pure Javascript
 
-
-# QuickStart
+# QuickStart (CLI)
 
 ```
+$ npm install textavatar -g 
+```
+
+```
+$ textavatar -h
+
+  Usage: textavatar [options]
+
+  Text Avatar(one or twe word) Generation
+
+
+  Options:
+
+    -V, --version     output the version number
+    -t --text <text>  one or twe word. ex) fk (default: )
+    -o --out <out>    Write file path (default: output.png)
+    -h, --help        output usage information
+```
+
+# QuickStart (Web Server)
+
+```
+$ cd {project_dir}
 $ npm install
 ```
 
