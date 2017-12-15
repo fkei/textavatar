@@ -33,6 +33,7 @@ function getColor(text) {
   var idx = text.charCodeAt() % colors.length
   return colors[idx]
 }
+
 function genTextAvatar(text, outputFilePath, size, callback) {
   var img = PImage.make(size, size);
   var ctx = img.getContext('2d');
@@ -47,9 +48,10 @@ function genTextAvatar(text, outputFilePath, size, callback) {
 
     PImage.encodePNGToStream(img, fs.createWriteStream(outputFilePath)).then(() => {
       winston.debug(`wrote out the png file to ${outputFilePath}`);
-      callback()
+      callback(outputFilePath)
     }).catch((e) => {
       winston.error("there was an error writing", e);
+      callback(emptyOutputFilePath)
     });
   });
 }
@@ -70,12 +72,22 @@ router.get('/:text', function (req, res, next) {
     winston.info(`Cache not hit :( ${outputFilePath}`)
   }
 
-  genTextAvatar(text, outputFilePath, size, function () {
+  genTextAvatar(text, outputFilePath, size, function (outputFilePath) {
     var buf = fs.readFileSync(outputFilePath);
     cache[outputFilePath] = buf
     res.append('Content-Type', 'image/png');
     res.status(200).send(buf);
   })
 });
+
+
+// !!!!!!
+// make empty
+var emptyOutputFilePath = `${__dirname}/../public/cache/empty.png`
+genTextAvatar("", emptyOutputFilePath, 200, function () {
+  var buf = fs.readFileSync(emptyOutputFilePath);
+  cache[emptyOutputFilePath] = buf
+  winston.info(`make empty image file :( ${emptyOutputFilePath}`)
+})
 
 module.exports = router;

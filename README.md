@@ -8,6 +8,7 @@ Text Avatar(one or twe word) Generation Web Server. (NodeJS)
 
 - [x] one or twe word
 - [x] Uppercase conversion
+- [x] In case of error, return empty image
 - [x] cache support
 - [x] 20 patterns of predictable background color
 - [x] 100% Pure Javascript
