@@ -6,6 +6,7 @@ Text Avatar(one or twe word) Generation Web Server. (NodeJS)
 
 # Features
 
+- [x] cli, library and web server support
 - [x] one or twe word
 - [x] Uppercase conversion
 - [x] In case of error, return empty image

@@ -5,8 +5,26 @@
     "debug": "DEBUG=textavatar:* nodemon --inspect=0.0.0.0:53001 --delay 80ms -e js,pug ./bin/www",
     "start": "node ./bin/www"
   },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fkei/textavatar.git"
+  },
+  "author": "fkei <kei.topaz@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fkei/textavatar/issues"
+  },
+  "homepage": "https://github.com/fkei/textavatar#readme",
+  "main": "./lib/textavatar.js",
+  "bin": {
+    "textavatar": "./cli.js"
+  },
   "dependencies": {
     "body-parser": "~1.18.2",
+    "commander": "^2.12.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
