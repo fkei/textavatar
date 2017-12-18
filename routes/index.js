@@ -8,7 +8,7 @@ var winston = require("winston");
 var cache = {};
 
 /* GET home page. */
-router.get('/:text', function (req, res, next) {
+router.get('/(:text)?', function (req, res, next) {
   var text = req.params.text || "";
   var size = req.query.size || 200;
   var outputFilePath = `${__dirname}/../public/cache/${text}@${size}.png`
