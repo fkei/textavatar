@@ -1,6 +1,6 @@
 {
   "name": "textavatar",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "scripts": {
     "debug": "DEBUG=textavatar:* nodemon --inspect=0.0.0.0:53001 --delay 80ms -e js,pug ./bin/www",
     "start": "node ./bin/www"
