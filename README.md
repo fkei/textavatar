@@ -4,7 +4,7 @@ Text Avatar(one or twe word) Generation Web Server. (NodeJS)
 
 ![textavatar](art/kei.topaz@gmail.png)
 
-# Features
+## Features
 
 - [x] cli, library and web server support
 - [x] one or twe word
@@ -14,14 +14,14 @@ Text Avatar(one or twe word) Generation Web Server. (NodeJS)
 - [x] 20 patterns of predictable background color
 - [x] 100% Pure Javascript
 
-# QuickStart (CLI)
+## QuickStart (CLI)
 
-```
-$ npm install textavatar -g 
+```sh
+npm install textavatar -g
 ```
 
-```
-$ textavatar -h
+```sh
+textavatar -h
 
   Usage: textavatar [options]
 
@@ -36,24 +36,31 @@ $ textavatar -h
     -h, --help        output usage information
 ```
 
-# QuickStart (Web Server)
+### test cli
 
-```
-$ cd {project_dir}
-$ npm install
-```
-
-# Server start :)
-
-```
-$ npm start # production
-$ npm run debug # development(nodemon)
+```sh
+node ./cli.js
 ```
 
-# Access URL pattern
+## QuickStart (Web Server)
+
+```sh
+cd {project_dir}
+npm install
+```
+
+## Server start :)
+
+```sh
+npm start # production
+npm run debug # development(nodemon)
+```
+
+## Access URL pattern
 
 pattern) `https://localhost:3000/{one or twe word}?size={image size}`
 
 ### ex
+
 - `https://localhost:3000/kei.topaz@gmail.com` # default size = 200
 - `https://localhost:3000/kei.topaz@gmail.com?size=250` # output word = `KE` and size = 250
